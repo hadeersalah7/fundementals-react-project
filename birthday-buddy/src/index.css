@@ -322,6 +322,7 @@ main {
 .person h4 {
   font-weight: 500;
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .person p {
