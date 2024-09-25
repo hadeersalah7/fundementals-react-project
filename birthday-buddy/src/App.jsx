@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import BirthdayComp from './BirthdayComp'
+import BirthdayComp from './components/BirthdayComp'
 function App() {
 
 
