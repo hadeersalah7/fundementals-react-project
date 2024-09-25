@@ -1,14 +1,15 @@
 import React from 'react'
 
-const Tour = ({id, image, info, price, name}) => {
+const Tour = ({id, image, info, price, name, removeTour}) => {
     return (
         <article className="single-tour">
             <img src={image} alt={name} className='img' />
             <span className='tour-price'>${price}</span>
-            <tour className="tour-info">
+            <div className="tour-info">
                 <h5>{name}</h5>
                 <p>{info}</p>
-            </tour>
+            <button className='btn btn-block delete-btn' type='button' onClick={() => removeTour(id)}>not interested</button>
+            </div>
         </article>
     )
 }

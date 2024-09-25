@@ -13,7 +13,6 @@ function App() {
       setIsLoading(true)
       const fetchedTours = await fetch(url)
       const tours = await fetchedTours.json()
-      console.log("touurs",tours)
       setTours(tours)
     } catch(e) {
       console.error(e)
@@ -21,6 +20,11 @@ function App() {
       setIsLoading(false)
     }
   } 
+
+  const removeTour = (id) => {
+    const tour = tours.filter((tour) => tour.id !== id)
+    setTours(tour)
+}
 
   useEffect(() => {
   fetchTours()
@@ -33,7 +37,7 @@ function App() {
   return (
     <>
       <div>
-        <Tours tours={tours} />
+        <Tours tours={tours} removeTour={removeTour} />
       </div>
     </>
   )
