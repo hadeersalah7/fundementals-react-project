@@ -34,6 +34,13 @@ function App() {
     return <main><Loading /> </main> 
   }
   
+  if (tours.length === 0) {
+    return <main>
+    <h3>No more tours</h3>
+    <button type='button' className='btn' style={{marginTop: "2rem"}} onClick={() => fetchTours()}>Reload Tours</button>
+  </main>
+}
+
   return (
     <>
       <div>
