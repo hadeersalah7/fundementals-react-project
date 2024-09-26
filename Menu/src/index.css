@@ -316,6 +316,9 @@ ul {
   max-width: 25rem;
 }
 
+.activeBtn {
+  background-color: var(--primary-700);
+}
 @media screen and (min-width: 992px) {
   .section-center {
     grid-template-columns: 1fr 1fr;

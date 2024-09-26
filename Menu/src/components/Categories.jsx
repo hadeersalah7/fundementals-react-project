@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const Categories = ({categories}) => {
+const Categories = ({ categories, filterCategories, activeCategory }) => {
     return (
         <div className='btn-container'>
             {categories.map((category) => {
-                return <button type='button' className='btn' key={category}>{category}</button>
+                return <button type='button'
+                    className={`btn ${category === activeCategory ? 'activeBtn' : ""}`}
+                    key={category}
+                    onClick={() => {
+                        filterCategories(category)
+                    }}
+                >{category}</button>
             })}
         </div>
     )
