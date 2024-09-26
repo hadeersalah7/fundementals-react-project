@@ -26,7 +26,7 @@ function App() {
   return (
     <main>
       <div className='menu'>
-        <Title text="our menu" />
+        <Title title="our menu" />
         <Categories categories={allCategories}
           filterCategories={filterCategories}
           activeCategory={activeCategory}
