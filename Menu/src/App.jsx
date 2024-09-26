@@ -1,17 +1,17 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-
+import Title from './components/Title'
+import menu from './data'
+import Menu from './components/Menu'
 function App() {
-  const [count, setCount] = useState(0)
-
+const [menuItem, setMenuItem] = useState(menu)
   return (
-    <>
-      <div>
-        
+    <main>
+      <div className='menu'>
+        <Title text="our menu" />
+        <Menu items={menuItem} />
       </div>
-    </>
+    </main>
   )
 }
 
