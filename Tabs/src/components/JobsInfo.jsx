@@ -1,7 +1,7 @@
 import React from 'react'
 import Duties from './Duties'
-const JobsInfo = ({ jobs }) => {
-    const { company, dates, title, duties } = jobs[0]
+const JobsInfo = ({ jobs, currentItem }) => {
+    const { company, dates, title, duties } = jobs[currentItem]
     return (
         <article className='job-info'>
             <h3>{title}</h3>
