@@ -270,7 +270,8 @@ ul {
   margin-top: 10rem;
   max-width: 800px;
   position: relative;
-  height: 450px
+  height: 450px;
+  /* overflow: hidden */
 }
 
 .slide{
