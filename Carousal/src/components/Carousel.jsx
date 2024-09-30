@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaQuoteRight } from "react-icons/fa"
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi"
 import { list, longList, shortList } from "../data"
@@ -16,8 +16,12 @@ const Carousel = () => {
             const result = (oldPerson + 1) % people.length
             return result
         })
-
     }
+
+    useEffect(() => {
+        const sliderId = setInterval(() => { nextBtn() }, 2000)
+        return () => clearInterval(sliderId)
+    }, [currentPerson])
     return (
         <section className='slider-container'>
             {people.map((p, pIndex) => {
