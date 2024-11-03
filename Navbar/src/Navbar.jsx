@@ -9,9 +9,9 @@ const Navbar = () => {
     }
     return (
         <nav className='nav-center'>
-            <div className="nav-head">
-                <img src={logo} alt='logo' />
-                <button type="button" onClick={toggleNav}><FaBars /></button>
+            <div className="nav-header">
+                <img src={logo} alt='logo' className='logo'/>
+                <button type="button" onClick={toggleNav} className='nav-toggle'><FaBars /></button>
             </div>
             {showNavbar && (
                 <div className="links-container">
