@@ -1,21 +1,36 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { links, social } from "./data"
 import { FaBars } from 'react-icons/fa'
 import logo from "./logo.svg"
 const Navbar = () => {
-    const [showNavbar, setShowNavbar] = useState(false)
+    const [showLinks, setShowLinks] = useState(false)
+    const linksContainerRef = useRef(null)
+    const linksRef = useRef(null)
+
     const toggleNav = () => {
-        setShowNavbar(prev => !prev)
+        setShowLinks(prev => !prev)
+    }
+    const linksStyle = {
+        height: showLinks
+            ? `${linksRef.current.getBoundingClientRect().height}px`
+            : "0px"
     }
     return (
-        <nav className='nav-center'>
-            <div className="nav-header">
-                <img src={logo} alt='logo' className='logo'/>
-                <button type="button" onClick={toggleNav} className='nav-toggle'><FaBars /></button>
-            </div>
-            {showNavbar && (
-                <div className="links-container">
-                    <ul className='links'>
+        <nav>
+            <div className='nav-center'>
+                <div className="nav-header">
+                    <img src={logo} alt='logo' className='logo' />
+                    <button type="button" onClick={toggleNav} className='nav-toggle'>
+                        <FaBars />
+                    </button>
+                </div>
+
+                <div
+                    className="links-container"
+                    ref={linksContainerRef}
+                    style={linksStyle}
+                >
+                    <ul className='links' ref={linksRef} >
                         {links.map((link) => {
                             const { id, url, text } = link
                             return (
@@ -26,8 +41,7 @@ const Navbar = () => {
                         })}
                     </ul>
                 </div>
-            )}
-
+            </div>
         </nav>
     )
 }

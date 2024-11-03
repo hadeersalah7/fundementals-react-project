@@ -296,3 +296,8 @@ nav {
   color: var(--primary-500);
   padding: 1.5rem;
 }
+
+.links-container{
+  overflow: hidden;
+  transition: var(--transition);
+}

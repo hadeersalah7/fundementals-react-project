@@ -1,5 +1,5 @@
 import Navbar from "./Navbar";
 const App = () => {
-  return <Navbar />;
+  return <main><Navbar /></main>;
 };
 export default App;
