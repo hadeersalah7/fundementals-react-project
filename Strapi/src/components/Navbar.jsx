@@ -8,7 +8,7 @@ const Navbar = () => {
         <div className="nav-center">
             <h3 className='logo'>strapi</h3>
 
-            <button type="button" onClick={openModal}><FaBars /></button>
+            <button type="button" className='toggle-btn' onClick={openModal}><FaBars /></button>
         </div>
     </nav>
   )
