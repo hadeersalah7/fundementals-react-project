@@ -345,22 +345,26 @@ main {
   row-gap: 1rem;
   box-shadow: var(--red-dark);
   transition: var(--transition);
+  transform: translateX(-100%);
 }
 
+.showSidebar {
+  transform: translateX(0);
+}
 @media screen and (min-width: 676px) {
   .sidebar {
     width: 400px;
   }
 }
-  .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 1.5rem;
-  }
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
 
 .logo {
-  height: 40px
+  height: 40px;
 }
 
 .close-btn {
@@ -377,34 +381,34 @@ main {
   font-size: 1.25rem;
   color: var(--grey-700);
   text-transform: capitalize;
-  padding:1rem 1.5rem;
+  padding: 1rem 1.5rem;
   transition: var(--transition);
   letter-spacing: var(--letterSpacing);
 }
 
 .links a:hover {
   background: var(--grey-100);
-  color: var(--grey-800)
+  color: var(--grey-800);
 }
 
-.links a svg{
+.links a svg {
   font-size: 1.5rem;
   color: var(--grey-500);
   margin-right: 1rem;
   transition: var(--transition);
 }
 
-.links a svg:hover{
-  color: var(--grey-600)
+.links a svg:hover {
+  color: var(--grey-600);
 }
 
-.social-links{
+.social-links {
   display: flex;
   justify-self: center;
-  padding-bottom:  2rem;
+  padding-bottom: 2rem;
 }
 
-.social-links a{
+.social-links a {
   margin: 0 0.5rem;
   color: var(--primary-500);
   transition: var(--transition);
@@ -412,5 +416,5 @@ main {
 }
 
 .social-links a:hover {
-  color: var(--primary-800)
+  color: var(--primary-800);
 }

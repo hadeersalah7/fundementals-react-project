@@ -6,10 +6,10 @@ import { useGlobalContext } from "./AppContext";
 const Sidebar = () => {
   const { showSidebar, handleCloseSidebar } = useGlobalContext();
   return (
-    <aside className="sidebar">
+    <aside className={showSidebar ? "showSidebar sidebar" : "sidebar"}>
       <div className="sidebar-header">
         <img src={logo} alt="logo" className="logo" />
-        <button type="button" className="close-btn">
+        <button type="button" className="close-btn" onClick={handleCloseSidebar}>
           <FaTimes />
         </button>
       </div>
