@@ -7,9 +7,9 @@ const Sidebar = () => {
   const { showSidebar, handleCloseSidebar } = useGlobalContext();
   return (
     <aside className="sidebar">
-      <div className="sidebar-h">
+      <div className="sidebar-header">
         <img src={logo} alt="logo" className="logo" />
-        <button type="button" className="close=btn">
+        <button type="button" className="close-btn">
           <FaTimes />
         </button>
       </div>
