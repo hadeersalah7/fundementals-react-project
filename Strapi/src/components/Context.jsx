@@ -4,7 +4,7 @@ const AppContext = createContext()
 
 export const AppProvider = ({children}) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
-
+    const [pageId, setPageId] = useState(null)
     const openModal =() => {
         setIsModalOpen(true)
     }
@@ -13,7 +13,10 @@ export const AppProvider = ({children}) => {
         setIsModalOpen(false)
     }
     return (
-        <AppContext.Provider value={{isModalOpen, openModal, closeModal}}>
+        <AppContext.Provider value={{
+            isModalOpen, openModal, closeModal,
+            pageId, setPageId
+        }}>
             {children}
         </AppContext.Provider>
     )
