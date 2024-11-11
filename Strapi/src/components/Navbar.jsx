@@ -3,9 +3,14 @@ import { useGlobalContext } from "./Context";
 import { FaBars } from "react-icons/fa";
 import NavLinks from "./NavLinks";
 const Navbar = () => {
-  const { openModal } = useGlobalContext();
+  const { openModal, setPageId } = useGlobalContext();
+  const handleNavChange = (e) => {
+      if(!e.target.classList.contains("nav-link")){
+        setPageId(null)
+      }
+  }
   return (
-    <nav>
+    <nav onMouseOver={handleNavChange}>
       <div className="nav-center">
         <h3 className="logo">strapi</h3>
 

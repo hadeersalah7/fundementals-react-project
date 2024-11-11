@@ -346,10 +346,10 @@ nav {
 }
 
 .show-sidebar {
-visibility: visible;
-opacity: 1;
-transition-property: opacity;
-transition-duration: 1s;
+  visibility: visible;
+  opacity: 1;
+  transition-property: opacity;
+  transition-duration: 1s;
 }
 
 .sidebar-container {
@@ -397,21 +397,23 @@ transition-duration: 1s;
 }
 
 @media screen and (min-width: 992px) {
-  .sidebar{
-    display: none
+  .sidebar {
+    display: none;
   }
 }
 
-.nav-links{
+.nav-links {
   display: none;
 }
 
 @media screen and (min-width: 992px) {
-  .nav-links{
+  .nav-links {
     display: flex;
     justify-content: center;
+    align-self: stretch;
   }
-  .nav-center{
+  .nav-center {
+    align-self: stretch;
     display: grid;
     grid-template-columns: auto 1fr;
   }
@@ -433,7 +435,7 @@ transition-duration: 1s;
 }
 
 @media screen and (min-width: 992px) {
-  .submenu{
+  .submenu {
     display: block;
     position: fixed;
     top: 6rem;
@@ -449,22 +451,23 @@ transition-duration: 1s;
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
     border-radius: var(--borderRadius);
-
+    z-index: -1;
   }
 
   .show-submenu {
+    z-index: 10;
     visibility: visible;
     opacity: 1;
     transform: rotate(0deg) translateX(-50%);
   }
 
-  .show-submenu h5{
+  .show-submenu h5 {
     margin-bottom: 1rem;
-    color: var(--primary-700)
+    color: var(--primary-700);
   }
-  .submenu-link  {
-display: grid;
-row-gap: 0.5rem;
+  .submenu-link {
+    display: grid;
+    row-gap: 0.5rem;
   }
   .submenu-link a {
     display: block;

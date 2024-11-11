@@ -10,7 +10,6 @@ const NavLinks = () => {
             return <button key={pageId} className="nav-link"
                 onMouseEnter={() => {
                     setPageId(pageId)
-                    console.log(pageId)
                 }}>{page}</button>
         })}
     </div>;
