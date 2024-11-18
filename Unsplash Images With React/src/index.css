@@ -70,7 +70,7 @@ html {
   --textColor: var(--grey-900)
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme:dark) {
   :root {
     --backgroundColor: var(--dark-mode-bg-color);
     --textColor: var(--dark-mode-text-color);
