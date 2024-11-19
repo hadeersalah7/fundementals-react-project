@@ -2,29 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const AppContext = createContext();
 
-
-const getIntialDarkMode = () => {
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme:dark)')?.matches
-    console.log(prefersDarkMode)
-    return prefersDarkMode
-}
-  
-export const AppProvider = ({ children }) => {
-  
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-      (getIntialDarkMode())
-  const [searchTerm, setSearchTerm] = useState("cat");
-
-  const toggleTheme = () => {
-    const newDarkTheme = !isDarkTheme;
-    setIsDarkTheme(newDarkTheme);
-
-// const getIntialDarkMode = () => {
-//   const preferedDarkMode = window.matchMedia('(prefers-color-scheme:dark)').matches
-//   console.log(preferedDarkMode)
-  
-//   return preferedDarkMode
-// }
 const getInitialDarkMode = () => {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const storedDarkMode = localStorage.getItem('darkTheme');
@@ -38,21 +15,20 @@ const getInitialDarkMode = () => {
 
 export const AppProvider = ({ children }) => {
   const [isDarkTheme, setIsDarkTheme] = useState(getInitialDarkMode());
-  
-  const [searchTerm, setSearchTerm] = useState('cat')
+  const [searchTerm, setSearchTerm] = useState('cat');
+
   const toggleTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);
     localStorage.setItem("darkTheme", newDarkTheme);
-
   };
+
   useEffect(() => {
     document.body.classList.toggle("dark-theme", isDarkTheme);
-  }, [isDarkTheme])
+  }, [isDarkTheme]);
+
   return (
-    <AppContext.Provider
-      value={{ isDarkTheme, toggleTheme, searchTerm, setSearchTerm }}
-    >
+    <AppContext.Provider value={{ isDarkTheme, toggleTheme, searchTerm, setSearchTerm }}>
       {children}
     </AppContext.Provider>
   );
